@@ -1,25 +1,25 @@
 #!/bin/bash
 
-source /home/public/env.bash
-
-export PATH=/home/public/pre_submission_testcase/verisim/bin:$PATH
-
 if [ -z "$1" ]; then
     Case="./testcase/gate_2000_2000_100.v"
 else
     Case=$1
 fi
 
-rm -rf verisim_history.zdb verisim.zdb verisim_history.db verisim.env verisim.db verisim_work verisim.log modinfo.txt result_*.txt
+rm -rf *.vvp *.vpi obj_dir *.o ${VPI}.c
 
 export Case
 
 SCRIPT_DIR=$(dirname $0)
 
-CFile=${SCRIPT_DIR}/work/setUpSystemFunc_verisim.cpp
-PliMap=${SCRIPT_DIR}/work/systf.tab
+CFile=${SCRIPT_DIR}/work/setUpSystemFunc_iverilog.cpp
+VPI=myvpi
 
-# verisim +acc+c ${Case} -P ${PliMap} ${CFile}  -no-mold -work ${Case}.work -image image
-verisim +acc+c ${Case} -P ${PliMap} ${CFile}  -no-mold
+touch ${VPI}.c
 
-rm -rf verisim_history.zdb verisim.zdb verisim_history.db verisim.env verisim.db verisim_work verisim.log modinfo.txt
+./iverilog/bin/iverilog -o testcase.vvp ${Case}
+./iverilog/bin/iverilog-vpi -L. ${VPI}.c ${CFile}
+./iverilog/bin/vvp -M. -m ${VPI} testcase.vvp
+
+
+rm -rf *.vvp *.vpi obj_dir *.o ${VPI}.c
