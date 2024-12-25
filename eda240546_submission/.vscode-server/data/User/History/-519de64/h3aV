@@ -1,8 +1,0 @@
-Run:
-
-1. ${SCRIPT_DIR}/run.sh ${CASE_DIR}/case.v # The results will be generated in pwd
-
-Build (if you want to build it by yourself):
-
-1. cd work/
-2. ./build.sh # This will compile the source code and copy the executable file to ~/submission/work/bin/
