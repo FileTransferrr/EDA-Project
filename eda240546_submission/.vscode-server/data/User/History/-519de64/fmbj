@@ -1,0 +1,45 @@
+File structure:
+.
+├── doc.pdf
+├── readme
+├── result_5.pdf
+├── result_5.v
+├── run.sh
+└── work
+    ├── bin
+    │   ├── FASSolver
+    │   └── logicLoopChecker
+    ├── build.sh
+    ├── lib
+    │   ├── boost
+    │   └── cmake
+    ├── setUpSystemFunc.cpp
+    ├── setUpSystemFunc_iverilog.cpp
+    ├── setUpSystemFunc_verisim.cpp
+    ├── soln
+    │   ├── result_1_soln.txt
+    │   ├── result_2_soln.txt
+    │   ├── result_3_soln.txt
+    │   └── result_4_soln.txt
+    ├── src
+    │   ├── checker.py
+    │   ├── FAS
+    │   ├── FASParser.hpp
+    │   ├── FASSolver.hpp
+    │   ├── logicLoopChecker
+    │   ├── loop_finder.cpp
+    │   ├── loop_transfer.cpp
+    │   ├── Minimum_Feedback_Arc_Set.cpp
+    │   ├── Register_Parser.cpp
+    │   └── result_4.txt
+    ├── sv_vpi_user.h
+    ├── systf.tab
+    └── vpi_user.h
+
+
+Run:
+1. ${SCRIPT_DIR}/run.sh ${CASE_DIR}/case.v # The results will be generated in pwd
+
+Build (if you want to build it by yourself):
+1. cd work/
+2. ./build.sh # This will compile the source code and copy the executable file to ~/submission/work/bin/

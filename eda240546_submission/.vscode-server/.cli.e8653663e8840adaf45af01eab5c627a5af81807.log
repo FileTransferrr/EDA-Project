@@ -1,0 +1,25 @@
+Listening on 127.0.0.1:45453
+[2024-11-13 13:02:59] info Disposed of connection to running server.
+looking for token 433d9174-a34d-4c0c-b478-550d76afacaf, got Some("433d9174-a34d-4c0c-b478-550d76afacaf")
+[2024-11-13 13:02:59] info Checking /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/log.txt and /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/pid.txt for a running server...
+[2024-11-13 13:02:59] info Starting server...
+[2024-11-13 13:02:59] info Server started
+[2024-11-13 13:03:39] info Disposed of connection to running server.
+[2024-11-13 13:03:39] info Disposed of connection to running server.
+looking for token 433d9174-a34d-4c0c-b478-550d76afacaf, got Some("433d9174-a34d-4c0c-b478-550d76afacaf")
+[2024-11-13 13:03:39] info Checking /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/log.txt and /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/pid.txt for a running server...
+[2024-11-13 13:03:39] info Found running server (pid=2241)
+[2024-11-13 15:42:02] info Disposed of connection to running server.
+[2024-11-13 15:42:02] info Disposed of connection to running server.
+looking for token 433d9174-a34d-4c0c-b478-550d76afacaf, got Some("433d9174-a34d-4c0c-b478-550d76afacaf")
+[2024-11-13 15:42:02] info Disposed of connection to running server.
+looking for token 433d9174-a34d-4c0c-b478-550d76afacaf, got Some("433d9174-a34d-4c0c-b478-550d76afacaf")
+[2024-11-13 15:42:03] info Disposed of connection to running server.
+[2024-11-13 15:42:03] info Checking /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/log.txt and /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/pid.txt for a running server...
+[2024-11-13 15:42:03] info Found running server (pid=2241)
+[2024-11-13 16:01:53] info Disposed of connection to running server.
+looking for token 433d9174-a34d-4c0c-b478-550d76afacaf, got Some("433d9174-a34d-4c0c-b478-550d76afacaf")
+[2024-11-13 16:01:54] info Checking /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/log.txt and /home/eda240546_submission/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/pid.txt for a running server...
+[2024-11-13 16:01:54] info Found running server (pid=2241)
+[2024-11-13 16:54:13] info Disposed of connection to running server.
+[2024-11-13 16:54:13] info Disposed of connection to running server.
