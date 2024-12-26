@@ -1,0 +1,12 @@
+#!/bin/bash
+IFS=/ read -ra DIR_LIST <<< "$PWD"
+
+DIR=${DIR_LIST[4]}
+echo $DIR
+
+mkdir $TEST_DIR/score_result/$DIR/$2.result -p
+
+echo $1 > $TEST_DIR/score_result/$DIR/$2.result/time
+cp -rf result*.txt $TEST_DIR/score_result/$DIR/$2.result
+echo $TEST_DIR/score_result/$DIR/$2.result
+ls -lhtr $TEST_DIR/score_result/$DIR/$2.result
