@@ -12,8 +12,8 @@ printResult::printResult(const std::vector<Gate>& gates, const std::vector<std::
 }
 
 void printResult::calculateAllSCCs() {
-    int numThreads = std::thread::hardware_concurrency();
-    // int numThreads = 1;
+    // int numThreads = std::thread::hardware_concurrency();
+    int numThreads = 4;
     std::vector<std::thread> threads(numThreads);
     int chunkSize = sccInfos.size() / numThreads;
     int remainder = sccInfos.size() % numThreads;
