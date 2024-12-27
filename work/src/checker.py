@@ -1,15 +1,19 @@
 import re
+import sys
 
 def parse_loops(file_path):
     loops = []
     with open(file_path, 'r') as file:
         content = file.read()
-        if (file_path == "../../result_1.txt" or file_path == "../soln/result_1_soln.txt" or file_path == "../../result_2.txt" or file_path == "../soln/result_2_soln.txt"):
+        if "result_1.txt" in file_path or "result_2.txt" in file_path:
             loop_pattern = re.compile(r"\d+\)\s*Loop Signals: (.+?)\n\s*Loop Gates: (.+?)\n", re.DOTALL)
-        if (file_path == "../../result_3.txt" or file_path == "../../gate_5000_5000_1000/result_3.txt"):
+        elif "result_3.txt" in file_path:
             loop_pattern = re.compile(r"\d+\)\s*Loop Signals: (.+?)\n\s*Loop Gates: (.+?)\n\s*Loop Condition: (.+?)\n", re.DOTALL)
-        if (file_path == "../../result_4.txt" or file_path == "../soln/result_4_soln.txt"):
+        elif "result_4.txt" in file_path:
             loop_pattern = re.complie(r"\d+\)\s*Loop Breaker: (.+?)\n", re.DOTALL)
+        else:
+            print(f"Error: Unrecognized file path {file_path}")
+            sys.exit(1)
             
         matches = loop_pattern.findall(content)
 
@@ -55,7 +59,11 @@ def compare_files(file1, file2):
     else:
         print("Matched!")
 
-file1 = "../../result_3.txt"
-file2 = "../../gate_5000_5000_1000/result_3.txt"
+if (len(sys.argv) != 3):
+    print("Usage: python checker.py <file1> <file2>")
+    sys.exit(1)
+    
+file1 = sys.argv[1]
+file2 = sys.argv[2]
 
 compare_files(file1, file2)

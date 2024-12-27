@@ -6,7 +6,11 @@
 #include <vector>
 #include <unordered_map>
 
-void parseModInfo(const std::string& filename, std::vector<Gate>& gates);
+bool isTargetGate(const std::string& str);
+
+std::string replaceSpecialChars(const std::string& str);
+
+void parseVerilogInfo(const std::string& filename, std::vector<Gate>& gates);
 
 void buildGraph(const std::vector<Gate>& gates, std::vector<std::vector<int>>& graph);
 

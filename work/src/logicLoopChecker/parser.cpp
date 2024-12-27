@@ -3,7 +3,20 @@
 #include <sstream>
 #include <iostream>
 
-void parseModInfo(const std::string& filename, std::vector<Gate>& gates) {
+bool isTargetGate(const std::string& str) {
+    return str == "and2" || str == "or2" || str == "nand2" || str == "not1";
+}
+
+std::string replaceSpecialChars(const std::string& str) {
+    std::string result = str;
+    std::replace(result.begin(), result.end(), '(', ' ');
+    std::replace(result.begin(), result.end(), ')', ' ');
+    std::replace(result.begin(), result.end(), ',', ' ');
+    std::replace(result.begin(), result.end(), ';', ' ');
+    return result;
+}
+
+void parseVerilogInfo(const std::string& filename, std::vector<Gate>& gates) {
     std::ifstream file(filename);
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
@@ -12,7 +25,11 @@ void parseModInfo(const std::string& filename, std::vector<Gate>& gates) {
 
     std::string line;
     while (std::getline(file, line)) {
-        if (line.empty() || line.find("module") != std::string::npos) {
+        if (line.empty() || line.find("module") != std::string::npos || line.find("endmodule") != std::string::npos
+            || line.find("initial") != std::string::npos || line.find("$get_module_info();")!= std::string::npos ||
+            line.find("end") != std::string::npos || line.find("wire") != std::string::npos || line.find("inout") != std::string::npos 
+            || line.find("//") != std::string::npos || line.find("assign") != std::string::npos || line.find("input") != std::string::npos 
+            || line.find("output") != std::string::npos) {
             continue;
         }
 
@@ -21,11 +38,15 @@ void parseModInfo(const std::string& filename, std::vector<Gate>& gates) {
             line = line.substr(colonPos + 1);
         }
 
-        std::istringstream lineStream(line);
+        std::istringstream lineStream(replaceSpecialChars(line));
         std::string gateType, gateName, output;
         std::vector<std::string> inputs;
 
         lineStream >> gateType >> gateName >> output;
+
+        if (!isTargetGate(gateType)) {
+            continue;
+        }
 
         std::string input;
         while (lineStream >> input) {

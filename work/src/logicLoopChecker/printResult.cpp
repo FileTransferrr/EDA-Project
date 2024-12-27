@@ -3,6 +3,7 @@
 #include <vector>
 #include <thread>
 #include <algorithm>
+#include <iostream>
 
 printResult::printResult(const std::vector<Gate>& gates, const std::vector<std::vector<int>>& graph, const std::vector<sccInfo>& sccInfos) {
     this->gates = gates;
@@ -12,8 +13,9 @@ printResult::printResult(const std::vector<Gate>& gates, const std::vector<std::
 }
 
 void printResult::calculateAllSCCs() {
-    // int numThreads = std::thread::hardware_concurrency();
-    int numThreads = 4;
+    int numThreads = std::thread::hardware_concurrency();
+    std::cout << "Number of threads: " << numThreads << std::endl;
+    // int numThreads = 4;
     std::vector<std::thread> threads(numThreads);
     int chunkSize = sccInfos.size() / numThreads;
     int remainder = sccInfos.size() % numThreads;

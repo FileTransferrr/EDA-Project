@@ -6,20 +6,13 @@ else
     Case=$1
 fi
 
-rm -rf *.vvp *.vpi obj_dir *.o ${VPI}.c
-
 export Case
 
-SCRIPT_DIR=$(dirname $0)
+./work/bin/logicLoopChecker $Case
 
-CFile=${SCRIPT_DIR}/work/setUpSystemFunc_iverilog.cpp
-VPI=myvpi
+base_name=$(basename $Case .v)
 
-touch ${VPI}.c
-
-./iverilog/bin/iverilog -o testcase.vvp ${Case}
-./iverilog/bin/iverilog-vpi -L. ${VPI}.c ${CFile}
-./iverilog/bin/vvp -M. -m ${VPI} testcase.vvp
-
-
-rm -rf *.vvp *.vpi obj_dir *.o ${VPI}.c
+python3 ./work/src/checker.py result_1.txt ./Soln/${base_name}/result_1.txt
+python3 ./work/src/checker.py result_2.txt ./Soln/${base_name}/result_2.txt
+python3 ./work/src/checker.py result_3.txt ./Soln/${base_name}/result_3.txt
+python3 ./work/src/checker_R4.py ./Soln/${base_name}/result_4.txt result_4.txt
