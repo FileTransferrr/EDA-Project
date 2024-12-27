@@ -1,8 +1,6 @@
 ## File structure:
-```
-$ tree -L 3
-.                                                                                          
-├── doc.pdf                                                                             
+```                                                                                  
+┌── doc.pdf                                                                             
 ├── README.md                                                                                         
 ├── result_5.pdf                                                                                   
 ├── result_5.v                                                                                     
