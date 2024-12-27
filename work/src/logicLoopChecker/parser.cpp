@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 
 bool isTargetGate(const std::string& str) {
     return str == "and2" || str == "or2" || str == "nand2" || str == "not1";
