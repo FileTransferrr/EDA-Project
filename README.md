@@ -37,3 +37,14 @@ Executable file `logicLoopChecker` which is **pre-built**. If you want to build 
 $ cd work/
 $ ./build.sh # This will compile the source code and copy the executable file to
 ```
+
+## Results:
+
+### Simple Cases
+![Simple Cases](./pictures/simple_cases.png)
+
+### Complex Cases
+![Complex Cases](./pictures/complex_cases.png)
+
+### Time Distribution
+![Time Distribution](./pictures/rate_distribution.png)
