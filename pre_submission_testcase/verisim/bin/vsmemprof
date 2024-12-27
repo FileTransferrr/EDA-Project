@@ -1,7 +1,0 @@
-#!/bin/bash
-
-SHELL_FOLDER=$(dirname $(readlink -f "$0"))
-echo "verisim path is $SHELL_FOLDER"
-VERISIM_PATH=$SHELL_FOLDER/../simulator/bin/verisim
-
-$SHELL_FOLDER/pprof $VERISIM_PATH $@
