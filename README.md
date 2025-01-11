@@ -44,5 +44,8 @@ $ ./build.sh # This will compile the source code and copy the executable file to
 ### Complex Cases
 ![Complex Cases](./pictures/complex_cases.png)
 
+### Enhenced performance by parallel computing
+![Enhenced performance by parallel computing](./pictures/single_vs_parallel.png)
+
 ### Time Distribution
 ![Time Distribution](./pictures/rate_distribution.png)
