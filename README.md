@@ -26,7 +26,9 @@
 ```
 $ ./run.sh ${CASE_DIR}/case.v # The results will be generated in pwd
  ```
-
+For example, if you want to run the case gate_10000_10000_7000.v, then do:
+```
+$ ./run.sh testcase_with_answer/gate_10000_10000_7000.v
 ## Note:
 
 Executable file `logicLoopChecker` which is **pre-built**. If you want to build it:
