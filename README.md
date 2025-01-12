@@ -1,6 +1,6 @@
 ## File structure:
 ```                                                                                  
-┌── doc.pdf                                                                             
+┌── report.pdf                                                                             
 ├── README.md                                                                                         
 ├── result_5.pdf                                                                                   
 ├── result_5.v                                                                                     
